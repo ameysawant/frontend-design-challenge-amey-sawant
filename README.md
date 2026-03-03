@@ -53,7 +53,16 @@ A security dashboard built with React 19, TypeScript, and Tailwind CSS.
    npm run dev
    ```
 
-The application will be available at `http://localhost:5173`.
+## Deployment
+
+### Netlify
+
+To deploy this project to Netlify, follow these settings:
+
+- **Build Command**: `npm run build`
+- **Publish Directory**: `dist`
+
+**Important**: A `_redirects` file is included in the `public` folder to ensure that client-side routing (React Router) works correctly when refreshing sub-pages.
 
 ## Project Structure
 
