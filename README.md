@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# Fenrir Security Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A security dashboard built with React 19, TypeScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dynamic Theming**: Fully integrated Light and Dark modes with synchronization across all components.
+- **Interactive Modals**: Reusable modal system for critical actions like starting new scans, exporting reports, and stopping active sessions.
+- **Data Visualization**: Comprehensive scan tables, severity badges, and trend indicators.
+- **Responsive Layout**: Optimized for both desktop and mobile viewing with a collapsible sidebar and fluid grid system.
+- **Clean Architecture**: Centralized types, reusable icon/badge components, and a modular dummy data system for easy scaling.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: [React 19](https://react.dev/)
+- **Bundler**: [Vite 7](https://vitejs.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **State Management**: [Redux Toolkit](https://redux-toolkit.js.org/)
+- **Routing**: [React Router 7](https://reactrouter.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **UI Components**: [Shadcn UI](https://ui.shadcn.com/) (based on Radix UI)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Clone the repository:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+   ```bash
+   git clone [repository-url]
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. Navigate to the project directory:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+   ```bash
+   cd frontend-design-challenge-amey-sawant
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+The application will be available at `http://localhost:5173`.
+
+## Project Structure
+
+- `src/components/auth`: Authentication forms (Login, Signup).
+- `src/components/dashboard`: Dashboard-specific UI elements (Sidebar, Topbar, Table, Stats, Modals).
+- `src/components/icons`: Centralized reusable icons, badges, and status indicators.
+- `src/dummy`: Centralized static data for the dashboard.
+- `src/styles`: Global theme and CSS variables.
+- `src/types`: All TypeScript interfaces and types.
+
+## Known Limitations
+
+- **Static Data**: All dashboard data and table entries are served from `src/dummy`. Integration with a real API is pending.
+
+---
