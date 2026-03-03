@@ -6,7 +6,7 @@ import { Moon, Sun } from "lucide-react";
 import { useAppSelector } from "@/store/store";
 import { toggleTheme } from "@/store/slices/theme/themeSlice";
 import { useState } from "react";
-import ReusableModal from "../modal/ReusableModal";
+import ReusableModal from "../modal/Modal";
 import { Paragraph } from "@/components/ui/typography";
 
 import {

@@ -6,7 +6,7 @@ import { Row } from "../flexbox-grid/Row";
 import { Col } from "../flexbox-grid/Col";
 import { Paragraph } from "@/components/ui/typography";
 import { useState } from "react";
-import ReusableModal from "../modal/ReusableModal";
+import ReusableModal from "../modal/Modal";
 import { Label } from "@/components/ui/label";
 
 const ScanActions = () => {
