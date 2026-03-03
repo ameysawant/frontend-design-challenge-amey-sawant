@@ -1,4 +1,3 @@
-import React from "react";
 import { RefreshCcw } from "lucide-react";
 import { Container } from "../flexbox-grid/Container";
 import { Row } from "../flexbox-grid/Row";
@@ -6,23 +5,16 @@ import { Col } from "../flexbox-grid/Col";
 import { H6, Paragraph } from "../ui/typography";
 import { Separator } from "@/components/ui/separator";
 
-const SubHeader = () => {
-  const items = [
-    { id: 1, label: "Org", value: "Project X" },
-    { id: 2, label: "Owner", value: "Nammagiri" },
-    { id: 3, label: "Total Scans", value: "100" },
-    { id: 4, label: "Scheduled", value: "1000" },
-    { id: 5, label: "Rescans", value: "100" },
-    { id: 6, label: "Failed Scans", value: "100" },
-  ];
+import { subHeaderItems } from "@/dummy/subHeaderData";
 
+const SubHeader = () => {
   return (
     <>
       <Container fluid className="">
         <Row className="xxl:justify-between">
           <Col col={10}>
             <Row className="">
-              {items.map((item) => (
+              {subHeaderItems.map((item) => (
                 <Col
                   col={6}
                   sm={4}
@@ -40,7 +32,7 @@ const SubHeader = () => {
                       {item.value}
                     </Paragraph>
                   </div>
-                  {item.id < items.length && (
+                  {item.id < subHeaderItems.length && (
                     <Separator
                       orientation="vertical"
                       className="absolute -right-px top-1/2 -translate-y-1/2 h-3 bg-border dark:bg-white/10 hidden xxl:block"

@@ -10,6 +10,8 @@ import { Row } from "@/components/flexbox-grid/Row";
 import { Col } from "@/components/flexbox-grid/Col";
 import { Card } from "@/components/ui/card";
 
+import { statCardsData } from "@/dummy/statCardsData";
+
 const Index = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -30,43 +32,25 @@ const Index = () => {
               <Col>
                 <div className="bg-sections">
                   <Row>
-                    <Col col={12} sm={6} lg={6} xl={3} className="mb-4">
-                      <StatCard
-                        title="Critical Severity"
-                        value="86"
-                        change="+2% increase than yesterday"
-                        type="critical"
-                        className="bg-card rounded-2xl shadow-sm border border-border"
-                      />
-                    </Col>
-                    <Col col={12} sm={6} lg={6} xl={3} className="mb-4">
-                      <StatCard
-                        title="High Severity"
-                        value="16"
-                        change="+0.9% increase than yesterday"
-                        type="high"
-                        className="bg-card rounded-2xl shadow-sm border border-border"
-                      />
-                    </Col>
-                    <Col col={12} sm={6} lg={6} xl={3} className="mb-4">
-                      <StatCard
-                        title="Medium Severity"
-                        value="26"
-                        change="-0.9% decrease than yesterday"
-                        type="medium"
-                        isIncrease={false}
-                        className="bg-card rounded-2xl shadow-sm border border-border"
-                      />
-                    </Col>
-                    <Col col={12} sm={6} lg={6} xl={3} className="mb-4">
-                      <StatCard
-                        title="Low Severity"
-                        value="16"
-                        change="+0.9% increase than yesterday"
-                        type="low"
-                        className="bg-card rounded-2xl shadow-sm border border-border"
-                      />
-                    </Col>
+                    {statCardsData.map((card, idx) => (
+                      <Col
+                        key={idx}
+                        col={12}
+                        sm={6}
+                        lg={6}
+                        xl={3}
+                        className="mb-4"
+                      >
+                        <StatCard
+                          title={card.title}
+                          value={card.value}
+                          change={card.change}
+                          type={card.type}
+                          isIncrease={card.isIncrease}
+                          className="bg-card rounded-2xl shadow-sm border border-border"
+                        />
+                      </Col>
+                    ))}
                   </Row>
                 </div>
               </Col>

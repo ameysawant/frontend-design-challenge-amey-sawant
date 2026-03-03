@@ -1,16 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Link } from "react-router";
-import {
-  LayoutDashboard,
-  Briefcase,
-  Scan,
-  Calendar,
-  Bell,
-  Settings,
-  CircleHelp,
-  ChevronRight,
-  X,
-} from "lucide-react";
+import { navItems, secondaryNavItems } from "@/dummy/navigation";
+import { ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Paragraph } from "@/components/ui/typography";
 import { Logo, NotificationDot } from "../icons";
@@ -18,18 +9,7 @@ import { Separator } from "@/components/ui/separator";
 
 import type { SidebarProps } from "@/types/SidebarProps";
 
-const navItems = [
-  { icon: LayoutDashboard, label: "Dashboard", id: "dashboard", active: true },
-  { icon: Briefcase, label: "Projects", id: "projects" },
-  { icon: Scan, label: "Scans", id: "scans" },
-  { icon: Calendar, label: "Schedule", id: "schedule" },
-];
-
-const secondaryNavItems = [
-  { icon: Bell, label: "Notifications", id: "notifications" },
-  { icon: Settings, label: "Settings", id: "settings" },
-  { icon: CircleHelp, label: "Support", id: "support" },
-];
+import { userData } from "@/dummy/userData";
 
 const Sidebar = ({ className, isOpen, onClose }: SidebarProps) => {
   return (
@@ -119,17 +99,17 @@ const Sidebar = ({ className, isOpen, onClose }: SidebarProps) => {
           <div className="flex items-center gap-3 p-2 rounded-xl transition-colors cursor-pointer group">
             <div className="h-10 w-10 rounded-full bg-yellow-400 flex items-center justify-center overflow-hidden border border-white/10">
               <img
-                src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"
+                src={userData.avatar}
                 alt="User"
                 className="h-full w-full object-cover"
               />
             </div>
             <div className="flex-1 overflow-hidden text-left">
               <Paragraph className="text-xs font-semibold text-sidebar-foreground truncate">
-                admin@edu.com
+                {userData.email}
               </Paragraph>
               <Paragraph className="text-xs font-bold text-muted-foreground truncate uppercase tracking-tight">
-                Security Lead
+                {userData.role}
               </Paragraph>
             </div>
             <ChevronRight className="h-4 w-4 text-emerald-600 group-hover:translate-x-1 transition-transform" />
