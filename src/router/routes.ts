@@ -16,5 +16,6 @@ export const APP_ROUTES = {
   app: {
     base: "/",
     home: "/",
+    dashboard: "dashboard",
   },
 };

@@ -1,9 +1,9 @@
-import Signup from "../auth/Signup";
+import Login from "../auth/Login";
 
 const Index = () => {
   return (
     <>
-      <Signup />
+      <Login />
     </>
   );
 };

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Eye, EyeClosed } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,6 +20,13 @@ import MetaIcon from "@/components/icons/MetaIcon";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Simulate login and redirect
+    navigate("/dashboard");
+  };
 
   return (
     <Card className="w-full max-w-sm rounded-2xl border-0 overflow-hidden">
@@ -38,7 +45,7 @@ const LoginForm = () => {
         </CardDescription>
       </CardHeader>
       <CardContent className="px-8">
-        <form className="space-y-5">
+        <form className="space-y-5" onSubmit={handleSubmit}>
           <Input id="email" type="email" placeholder="Email Address" />
 
           <div className="relative">
@@ -82,6 +89,7 @@ const LoginForm = () => {
       <CardFooter className="flex-col gap-4 px-8">
         <Button
           type="submit"
+          onClick={handleSubmit}
           className="w-full rounded-full bg-teal-500 hover:bg-teal-600 h-10 shadow-lg shadow-teal-500/20"
         >
           Login
