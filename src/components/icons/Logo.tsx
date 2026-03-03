@@ -10,8 +10,8 @@ const Logo = ({
       <img
         src={
           option === 2
-            ? "/src/assets/images/logo/logo-secondary.png"
-            : "/src/assets/images/logo/logo.png"
+            ? "https://res.cloudinary.com/dgfnccyus/image/upload/v1772575668/logo-secondary_d5vckg.png"
+            : "https://res.cloudinary.com/dgfnccyus/image/upload/v1772575668/logo_v7tcya.png"
         }
         width={100}
         alt="logo"

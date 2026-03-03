@@ -53,6 +53,8 @@ A security dashboard built with React 19, TypeScript, and Tailwind CSS.
    npm run dev
    ```
 
+The application will be available at `https://deft-nasturtium-95928a.netlify.app/`.
+
 ## Deployment
 
 ### Netlify
